@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="tourist_visa.list">
+      <field name="name">tourist_visa list</field>
+      <field name="model">tourist_visa.tourist_visa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="tourist_visa.action_window">
+      <field name="name">tourist_visa window</field>
+      <field name="res_model">tourist_visa.tourist_visa</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="tourist_visa.action_server">
+      <field name="name">tourist_visa server</field>
+      <field name="model_id" ref="model_tourist_visa_tourist_visa"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="tourist_visa" id="tourist_visa.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="tourist_visa.menu_1" parent="tourist_visa.menu_root"/>
+    <menuitem name="Menu 2" id="tourist_visa.menu_2" parent="tourist_visa.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="tourist_visa.menu_1_list" parent="tourist_visa.menu_1"
+              action="tourist_visa.action_window"/>
+    <menuitem name="Server to list" id="tourist_visa" parent="tourist_visa.menu_2"
+              action="tourist_visa.action_server"/>
+-->
+  </data>
+</odoo>
