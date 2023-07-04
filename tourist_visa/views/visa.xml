@@ -28,8 +28,10 @@
                                     <div class="col">
                                         <field name="lname" class="form-control" placeholder="Last Name"/>
                                     </div>
+
                                 </div>
                                 <group>
+                                    <field name="name"/>
                                     <field name="passport_number"/>
                                     <field name="nationality_id"/>
                                 </group>

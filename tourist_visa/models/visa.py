@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+from datetime import datetime
 
 class touristVisa(models.Model):
     _inherit = 'res.partner'
@@ -32,7 +32,16 @@ class touristVisa(models.Model):
         ('work', 'Work Visa'),
         ('transit', 'Transit Visa')
     ], string='Visa Type')
+    # applicant_id = fields.Many2one('res.partner', string='Applicant')
+    visa_code = fields.Char(string='Visa Code', compute='_compute_visa_code', store=True)
 
+    @api.depends('country_id','destenation')
+    def _compute_visa_code(self):
+        for visa in self:
+            country_code = visa.country_id.code if visa.country_id else ''
+            passport_suffix = visa.passport_number[-4:] if visa.passport_number else ''
+            sequence = int(datetime.timestamp(datetime.now()))
+            visa.visa_code = f"{country_code}-{passport_suffix}-{sequence}"
 
 
 
