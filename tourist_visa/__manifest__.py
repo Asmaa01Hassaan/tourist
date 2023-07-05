@@ -20,9 +20,11 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/visa.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/res_partner_view.xml',
+        'views/destenation_cost_view.xml',
+        'views/visa_destination_view.xml',
+        'views/visa_request_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

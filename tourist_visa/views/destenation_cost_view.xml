@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record id="cost_destination_view_form" model="ir.ui.view">
+            <field name="name">cost_destination_view_form</field>
+            <field name="model">cost.destination</field>
+            <field name="arch" type="xml">
+                <form string="visa_destination_form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="cost" widget="monetary"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="visa_destination_view_tree" model="ir.ui.view">
+            <field name="name">cost_destination_view_tree</field>
+            <field name="model">cost.destination</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="cost" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="cost_destination_action" model="ir.actions.act_window">
+            <field name="name">cost_destination_action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cost.destination</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Destination cost" id="tourist_visa.menu_2_list" parent="tourist_visa.menu_root"
+                  action="cost_destination_action" sequence="3"/>
+    </data>
+</odoo>

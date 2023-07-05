@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_tourist_visa_tourist_visa,tourist_visa.tourist_visa,model_tourist_visa_tourist_visa,base.group_user,1,1,1,1
+access_cost.destination,access_cost.destination,model_cost_destination,base.group_user,1,1,1,1
+access_visa.destination,access_visa.destination,model_visa_destination,base.group_user,1,1,1,1
+access_visa.request,access_visa.request,model_visa_request,base.group_user,1,1,1,1

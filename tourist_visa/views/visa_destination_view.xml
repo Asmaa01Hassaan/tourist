@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record id="visa_destination_view_form" model="ir.ui.view">
+            <field name="name">visa_destination_view_form</field>
+            <field name="model">visa.destination</field>
+            <field name="arch" type="xml">
+                <form string="visa_destination_form">
+                    <group string="Destination">
+                        <field name="country_id"/>
+                        <field name="code"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+        <record id="visa_destination_view_tree" model="ir.ui.view">
+            <field name="name">visa_destination_view_tree</field>
+            <field name="model">visa.destination</field>
+            <field name="arch" type="xml">
+                <tree string="visa_destination_tree">
+                    <field name="country_id"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <record id="visa_destination_action" model="ir.actions.act_window">
+            <field name="name">visa_destination_action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">visa.destination</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Destination" id="tourist_visa.menu_3_list" parent="tourist_visa.menu_root"
+                  action="visa_destination_action" sequence="2"/>
+    </data>
+</odoo>
